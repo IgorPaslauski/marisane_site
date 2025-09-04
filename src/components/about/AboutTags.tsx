@@ -1,5 +1,3 @@
-import React from "react";
-
 const tags = [
   { label: "Terapia Sistêmica", color: "#FFDCDC" },
   { label: "Constelação Familiar", color: "#FFE8CD" },
