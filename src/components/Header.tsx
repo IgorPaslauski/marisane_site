@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const Header = () => {
@@ -37,14 +37,20 @@ const Header = () => {
           </nav>
 
           {/* Mobile Menu Button */}
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          <button
+            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="primary-navigation"
+            className="md:hidden p-2 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-600"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-gray-200">
+          <nav id="primary-navigation" className="md:hidden py-4 border-t border-gray-200" role="navigation">
             {navItems.map(item => (
               <a key={item.href} href={item.href} className="block py-2 text-gray-700 hover:text-[#A5B68D] transition-colors duration-200" onClick={() => setIsMenuOpen(false)}>
                 {item.label}

@@ -1,13 +1,12 @@
-import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Testimonials from './components/Testimonials';
-import Appointment from './components/Appointment';
-import FAQ from './components/FAQ';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Header from "./components/Header";
+import Services from "./components/service/Services";
+import Appointment from "./components/appointment/Appointment";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import AboutSection from "./components/about/AboutSection";
+import ContactSection from "./components/contact/ContactSection";
+import TestimonialsSection from "./components/testimonial/TestimonialsSection";
+import FAQSection from "./faq/FAQSection";
 
 function App() {
   return (
@@ -15,12 +14,12 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <About />
+        <AboutSection />
         <Services />
-        <Testimonials />
+        <TestimonialsSection />
         <Appointment />
-        <FAQ />
-        <Contact />
+        <FAQSection />
+        <ContactSection />
       </main>
       <Footer />
     </div>
